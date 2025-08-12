@@ -11,10 +11,10 @@ export interface GeminiResponse {
 }
 
 export class GeminiService {
-  private apiKey: string;
+  private apiKey: string = 'AIzaSyDzRGKvBzT7dKqLvb4UQ42u7HXM_T_iJRI';
 
-  constructor(apiKey: string) {
-    this.apiKey = apiKey;
+  constructor() {
+    // API key is hardcoded for ease of use
   }
 
   async fixText(text: string): Promise<string> {

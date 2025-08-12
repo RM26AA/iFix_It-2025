@@ -34,7 +34,7 @@ export const MainApp: React.FC<MainAppProps> = ({ geminiService, onLogout }) => 
             className="btn-secondary"
           >
             <LogOut className="w-4 h-4 mr-2" />
-            Change API Key
+            Refresh App
           </Button>
         </div>
       </header>

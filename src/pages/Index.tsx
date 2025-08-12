@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GeminiService } from '@/services/geminiService';
-import { ApiKeyInput } from '@/components/ApiKeyInput';
 import { MainApp } from '@/components/MainApp';
 
 const Index = () => {
-  const [geminiService, setGeminiService] = useState<GeminiService | null>(null);
-
-  const handleApiKeySubmit = (apiKey: string) => {
-    const service = new GeminiService(apiKey);
-    setGeminiService(service);
-  };
+  const geminiService = new GeminiService();
 
   const handleLogout = () => {
-    setGeminiService(null);
+    // No logout needed since API key is hardcoded
+    window.location.reload();
   };
-
-  if (!geminiService) {
-    return <ApiKeyInput onApiKeySubmit={handleApiKeySubmit} />;
-  }
 
   return <MainApp geminiService={geminiService} onLogout={handleLogout} />;
 };
